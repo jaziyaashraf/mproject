@@ -1,0 +1,23 @@
+{% extends "furnitureindex.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+<table class="table table-bordered">
+  <tr>
+    <td>#</td>
+      <th>Category Name</th>
+      <th></th>
+
+
+  </tr>
+ {% for i in data %}
+  <tr>
+    <td width="50px">{{ forloop.counter }}&nbsp;</td>
+    <td>{{ i.catname }}</td>
+<td width="50px"><a href="/myapp/furniture_category_del/{{ i.pk }}" class="btn btn-danger">Delete</a></td>
+  </tr>
+    {% endfor %}
+
+</table>
+</form>
+
+{% endblock %}

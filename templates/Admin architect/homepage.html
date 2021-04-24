@@ -1,38 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-</head>
+{% extends "admin_index.html" %}
+{% block body %}
+{#<p><a href="/myapp/adm_rgstr_regisrer/">Register Employees</a></p>#}
 
-<body>
-<form id="form1" name="form1" method="post" action="">
-  <table width="200" border="1">
-    <tr>
-    <th>Type</td>
-    <td><select name=""></select></td>
-    <td><input name="" type="button" value="SEARCH" /></td>
-    <tr>
-      <th>Sl_no</td>
-      <th>Name</td>
-      <th>Experience</td>
-      <th>Phone</td>
-      <th>Email</td>
-      <th>Image</td>
-      <th>Rating</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td><a href="#">View_More</a></td>
-    </tr>
-  </table>
-</form>
-</body>
-</html>
+    <div class="row">
+
+    <div class="col-lg-5">
+        <h1>Welcome Admin</h1>
+        <p>
+        </p>
+
+    </div>
+       <div class="col-lg-7"><img src="/static/builders-png.png" width="600px"/></div>
+
+    </div>
+
+{#    <p style="font-size: 19px">#}
+{#    AK Properties & Builders is a renowned and widely trusted property Consultancy, builder and development company involved in mega protects in Islamabad. We are a reputed service providers customers functional & aesthetically pleasing apartments, complemented by customers, We always try to be innovative with the use of technology along with a wholesome of essential amenities.#}
+{#    </p>#}
+
+{% endblock %}

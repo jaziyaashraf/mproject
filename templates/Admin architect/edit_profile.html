@@ -1,0 +1,66 @@
+{% extends "admin_index.html" %}
+{% block body %}
+<form id="form1" name="form1" enctype="multipart/form-data" method="post" action="/myapp/adm_employee_edit_post">
+{% csrf_token %}
+  <table class="table table-bordered">
+    <tr>
+      <td colspan="2"><img src="{{ data.image }}" width="50" height="100" /></td>
+    </tr>
+    <tr>
+      <td width="200px">Name</td>
+      <td><input type="text" name="name" id="textfield" value="{{ data.name }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+    {% if  data.gender == "Male" %}
+      <td><input type="radio" name="radio" id="radio" value="Male" checked/>MALE
+        <input type="radio" name="radio" id="radio2" value="Female"/>FEMALE</td>
+    {% elif  data.gender == 'Female' %}
+       <td><input type="radio" name="radio" id="radio" value="Male" />MALE
+        <input type="radio" name="radio" id="radio2" value="Female"checked/>FEMALE</td>
+        {% endif %}
+    </tr>
+    <tr>
+      <td>Dob</td>
+      <td><input type="date" name="dob" id="textfield2"  value="{{ data.dob|date:"Y-m-d" }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" name="email" id="textfield3" value="{{ data.email }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><input type="text" name="phone" id="textfield4"  value="{{ data.phone }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Experience</td>
+      <td><input type="text" name="experience" id="textfield5" value="{{ data.experience }}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>House Name</td>
+      <td><input type="text" name="house" id="textfield6" value="{{ data.house_name }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><input type="text" name="district" id="textfield7"value="{{ data.district }} " class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Pincode</td>
+      <td><input type="text" name="pincode" id="textfield8" value="{{ data.pincode }}" class="form-control"/></td>
+    </tr>
+
+    </tr>
+      <tr>
+      <td>Image</td>
+      <td><input type="file" name="image" id="filefield" class="form-control"/></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" value="UPDATE" class="btn btn-success" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

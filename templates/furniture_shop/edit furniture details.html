@@ -1,0 +1,49 @@
+{% extends "furnitureindex.html" %}
+{% block body %}
+<form action="/myapp/furniture_details__post/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered">
+    <tr>
+      <td width="150px">Furniture name</td>
+      <td><input type="text" name="furniturename" id="textfield" value="{{ data.furniturename }}" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td>Category</td>
+        <td><select name="category" id="select" class="form-control" required>
+            <option value="{{ data.category.id}}">{{ data.category.catname}}</option>
+             {% for i in res1 %}
+              <option value="{{ i.pk }}">{{ i.catname }}</option>
+          {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td><input type="file" name="ff" id="fileField" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td>Wood type</td>
+      <td><select name="woodtype" id="woodtype"  class="form-control" required><option value="{{ data.wood_type}}">{{ data.wood_type}}</option>
+           <option value="type1">type2</option>
+
+      </select></td>
+    </tr>
+    <tr>
+      <td>Amount</td>
+      <td><input type="text" name="amount" id="textfield2"value="{{ data.Amount }}" class="form-control" required /></td>
+    </tr>
+      <tr>
+      <td>Description</td>
+      <td><input type="text" name="description" id="textfield5"value="{{ data.description }}" class="form-control" required /></td>
+    </tr>
+    <tr>
+        <td></td>
+      <td>
+        <input type="submit" name="button" id="button" value="EDIT" class="btn btn-success" />
+      </td>
+      
+    </tr>
+    
+    
+  </table>
+
+</form>
+{% endblock %}

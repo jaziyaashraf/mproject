@@ -6,42 +6,51 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="">
-  <table width="200" border="1">
+<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="/myapp/arc_edit_profile_post/">
+    {% csrf_token %}
+  <table width="200" border="0" align="center">
     <tr>
-      <td colspan="2"><img src="image.jpg" width="50" height="100" /></td>
+      <td colspan="2"><img src="{{ data.image }}" width="50" height="100" /></td>
     </tr>
     <tr>
       <td>Name</td>
-      <td><input type="text" name="textfield" id="textfield" /></td>
+      <td><input type="text" name="name" id="textfield" value="{{ data.name }}" /></td>
     </tr>
     <tr>
       <td>Gender</td>
-      <td><input type="radio" name="radio" id="radio" value="radio" />
+      <td><input type="radio" name="radio" id="radio" value="Male" {% if data.gender == 'Male' %} checked {% endif %}/>
         MALE
-        <input type="radio" name="radio2" id="radio2" value="radio2" />
+        <input type="radio" name="radio" id="radio2" value="Female" {% if data.gender == 'Female' %} checked {% endif %} />
         FEMALE</td>
     </tr>
     <tr>
       <td>Dob</td>
-      <td><input type="text" name="textfield2" id="textfield2" /></td>
+      <td><input type="date" name="dob" id="textfield2" value="{{ data.dob|date:"Y-m-d" }}"/></td>
     </tr>
     <tr>
       <td>Email</td>
-      <td><input type="text" name="textfield3" id="textfield3" /></td>
+      <td><input type="text" name="email" id="textfield3" value="{{data.email }}"/></td>
     </tr>
     <tr>
       <td>Phone</td>
-      <td><input type="text" name="textfield4" id="textfield4" /></td>
+      <td><input type="text" name="phone" id="textfield4" value="{{ data.phone }}"/></td>
     </tr>
     <tr>
       <td>Experience</td>
-      <td><select name="select" id="select">
-      </select></td>
+      <td><input type="text" name="experience" id="textfield5" value="{{ data.experience }}">
+      </td>
+    </tr>
+   <tr>
+      <td>House Name</td>
+      <td><input type="text" name="house" id="textfield6" value="{{ data.house_name }}"/></td>
     </tr>
     <tr>
-      <td>Address</td>
-      <td><textarea name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+      <td>District</td>
+      <td><input type="text" name="district" id="textfield7" value="{{ data.district }} "/></td>
+    </tr>
+    <tr>
+      <td>Pincode</td>
+      <td><input type="text" name="pincode" id="textfield8" value="{{ data.pincode }}"/></td>
     </tr>
     <tr>
       <td colspan="2"><div align="center">
