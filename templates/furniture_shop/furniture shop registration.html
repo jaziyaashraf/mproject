@@ -1,0 +1,96 @@
+{% load static %}
+
+<html lang="zxx">
+
+<head>
+    <title>Stock Signup Form Responsive Widget Template :: W3layouts</title>
+		<!-- Meta tags -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<!-- //Meta tags -->
+    <link rel="stylesheet" href="{% static 'signup/css/style.css' %}" type="text/css" media="all" /><!-- Style-CSS -->
+    <link href="{% static 'signup/css/font-awesome.css' %}" rel="stylesheet"><!-- font-awesome-icons -->
+</head>
+
+<body>
+	<section class="w3l-form-36">
+		<div class="form-36-mian section-gap">
+			<div class="wrapper">
+				<div class="form-inner-cont">
+					<h3>Create your account</h3>
+					<form method="post" action="/myapp/furnitureshop_reg/" class="signin-form">
+						<div class="form-input">
+							<span class="fa fa-user-o" aria-hidden="true"></span> <input type="text" name="shop_name" placeholder="ShopName" required />
+						</div>
+						<div class="form-input">
+							<span class="fa fa-envelope-o" aria-hidden="true"></span> <input type="text" name="ownername" placeholder="Owner Name" required />
+						</div>
+						<div class="form-input">
+							<span class="fa fa-key" aria-hidden="true"></span><input type="text" name="city" placeholder="city"
+								required />
+						</div>
+						<div class="form-input">
+							<span class="fa fa-key" aria-hidden="true"></span> <input type="text" name="district" placeholder="District"
+								required />
+
+                        </div>
+                        
+                        <div class="form-input">
+							<span class="fa fa-key" aria-hidden="true"></span> <input type="text" name="state" placeholder="State"
+								required />
+						</div>
+
+                        <div class="form-input">
+							<span class="fa fa-key" aria-hidden="true"></span> <input type="email" name="email" placeholder="Email"
+								required />
+						</div>
+                        
+                        <div class="form-input">
+							<span class="fa fa-key" aria-hidden="true"></span> <input type="text" name="phone" placeholder="Phone Number"
+								required />
+						</div>
+                        
+                        <div class="form-input">
+                            <span class="fa fa-key" aria-hidden="true"></span><input type="text" name="latitude" placeholder="latitude" required />
+                        </div>
+                        <div class="form-input">
+                            <span class="fa fa-key" aria-hidden="true"></span><input type="text" name="longitude" placeholder="longitude" required />
+                        </div>
+                        
+                          <div class="form-input">
+							<span class="fa fa-key" aria-hidden="true"></span> <input type="password" name="password" placeholder="Password"
+								required />
+						</div>
+                        
+                         <div class="form-input">
+							<span class="fa fa-key" aria-hidden="true"></span> <input type="password" name="cpassword" placeholder="Confirm Password"
+								required />
+						</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+						
+						<div class="login-remember d-grid">
+
+							<button class="btn theme-button">Signup</button>
+						</div>
+					</form>
+				</div>
+					<p class="signup">Already a member? <a href="/myapp/" class="signuplink">Login</a></p>
+				</div>
+
+				<!-- copyright -->
+				<div class="copy-right">
+
+				</div>
+				<!-- //copyright -->
+			</div>
+		</div>
+	</section>
+</body>
+</html>

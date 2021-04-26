@@ -1,0 +1,48 @@
+{% extends "furnitureindex.html" %}
+{% block body %}
+<body>
+<h1 align="center">ADD FURNITURE DETAILS</h1>
+<form action="/myapp/furniture_details_post/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered">
+    <tr>
+      <td width="150px">Furniture name</td>
+      <td><input type="text" name="nm" id="textfield" class="form-control"required /></td>
+    </tr>
+    <tr>
+      <td>Category</td>
+      <td><select name="select2" id="select2" class="form-control">
+          {% for i in res %}
+              <option value="{{ i.pk }}">{{ i.catname }}</option>
+          {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td><input type="file" name="ff" id="fileField" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <td>Wood type</td>
+      <td><select name="select" id="select" class="form-control" required>
+          <option value="Soft wood">Soft wood</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td>Amount</td>
+      <td><input type="text" name="textfield4" id="textfield4" class="form-control" required/></td>
+    </tr>
+      <tr>
+      <td>Descripion</td>
+      <td><input type="text" name="textfield5" id="textfield5" class="form-control" required/></td>
+    </tr>
+    <tr>
+        <td></td>
+      <td>
+        <input type="submit" name="button" id="button" value="Submit" class="btn btn-success" />
+     </td>
+
+    </tr>
+    
+  </table>
+</form>
+</body>
+{% endblock %}

@@ -1,14 +1,11 @@
-{% extends "architectureindex.html" %}
+{% extends "designer_index.html" %}
 {% block body %}
-<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <h1 align="center">ADD DESIGNS</h1>
+<form action="/myapp/add_designpost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
   <table class="table table-bordered">
     <tr>
-      <td width="150px">Plan Name</td>
+      <td width="150px">Design Name</td>
       <td><input type="text" name="planname" required class="form-control"/></td>
-    </tr>
-    <tr>
-      <td>Total Squarefeet</td>
-      <td><input type="text" name="totalsquarefeet" required class="form-control"/></td>
     </tr>
       <tr>
       <td>Total Budget</td>

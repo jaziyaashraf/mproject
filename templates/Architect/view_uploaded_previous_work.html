@@ -2,6 +2,7 @@
 {% block body %}
 
 <body>
+<h1 align="center">VIEW PREVIOUS WORK</h1>
 <form id="form1" name="form1" method="post" action="">
   <table class="table table-bordered">
     <tr>
@@ -23,7 +24,7 @@
         <td><a href="/myapp/arc_edit_previous_work/{{ i.pk }}">Edit</a> </td>
             <td><a href="/myapp/arc_delete_previous_work/{{ i.pk }}">Delete</a> </td>
 
-    
+
     </tr>
       {% endfor %}
   </table>

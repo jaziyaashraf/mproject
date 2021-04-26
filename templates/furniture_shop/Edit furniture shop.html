@@ -1,0 +1,86 @@
+{% extends "furnitureindex.html" %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/myapp/furnitureshop_edit_post/">
+  <table class="table table-bordered">
+    <tr>
+      <td width="150px">Shop name</td>
+      <td><input type="text"  class="form-control" name="shop_name" id="textfield" value="{{ data.shop_name }}" /></td>
+
+    </tr>
+    <tr>
+      <td>Owner name</td>
+      <td><input type="text"  class="form-control" name="ownername" id="textfield2" value="{{ data.ownername }}"  /></td>
+    </tr>
+    <tr>
+      <td>State</td>
+        <td><select name="state" id="select"  class="form-control"><option value="{{ data.state }}">{{ data.state }}</option>
+
+      </select></td>
+    </tr>
+    <tr>
+      <td>District</td>
+        <td><select  class="form-control" name="district" id="select2" ><option value="{{ data.district }}">{{ data.district }}</option>
+        <option value="Kasarkode">Kasarkode</option>
+          <option value="Kannur">Kannur</option>
+          <option value="Vayanad">Vayanad</option>
+          <option value="Kozhokide">Kozhokide</option>
+          <option value="Malapuram">Malapuram</option>
+          <option value="Palakad">Palakad</option>
+          <option value="Thrissur">Thrissur</option>
+          <option value="Eranakulam">Eranakulam</option>
+          <option value="Edukki">Edukki</option>
+          <option value="Kottayam">Kottayam</option>
+          <option value="Alapuya">Alapuya</option>
+          <option value="Pathanamthitta">Pathanamthitta</option>
+          <option value="Kollam">Kollam</option>
+          <option value="Thiruvanathapuram">Thiruvanathapuram</option>
+            </select></td>
+    </tr>
+    <tr>
+      <td>City</td>
+        <td><select name="city" id="select3"  class="form-control"><option value="{{ data.state }}">{{ data.state }}</option>
+            <option value="Kasarkode">Kasarkode</option>
+          <option value="Kannur">Kannur</option>
+          <option value="Vayanad">Vayanad</option>
+          <option value="Kozhokide">Kozhokide</option>
+          <option value="Malapuram">Malapuram</option>
+          <option value="Palakad">Palakad</option>
+          <option value="Thrissur">Thrissur</option>
+          <option value="Eranakulam">Eranakulam</option>
+          <option value="Edukki">Edukki</option>
+          <option value="Kottayam">Kottayam</option>
+          <option value="Alapuya">Alapuya</option>
+          <option value="Pathanamthitta">Pathanamthitta</option>
+          <option value="Kollam">Kollam</option>
+          <option value="Thiruvanathapuram">Thiruvanathapuram</option>
+            </select></td>
+      </select></td>
+    </tr>
+    <tr>
+    <td>phone</td>
+
+    <td><input type="text" name="phone" id="textfield4"  value="{{ data.phone }}"  class="form-control"/></td>
+    </tr><tr>
+    <td>phone</td>
+
+    <td><input type="text" name="email" id="textfield5"  value="{{ data.email }}"  class="form-control"/></td>
+    </tr>
+
+      <td>Latitude</td>
+      <td><input type="text" name="latitude" id="textfield6" value="{{ data.latitide}}"  class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Longitude</td>
+      <td><input type="text" name="longitude" id="textfield3" value="{{ data.longitude }}" class="form-control"/></td>
+      </tr>
+      <tr>
+          <td></td>
+      <td ><input type="submit" value="UPDATE" class="btn btn-success"/>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

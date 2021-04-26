@@ -1,0 +1,35 @@
+{% extends "designer_index.html" %}
+{% block body %}
+    <h1 align="center">EDIT DESIGN</h1>
+<form action="/myapp/edit_designpost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered">
+    <tr>
+      <td width="150px">Design Name</td>
+      <td><input type="text" name="planname" required class="form-control" value="{{ res.design_name }}"/></td>
+    </tr>
+      <tr>
+      <td>Total Budget</td>
+      <td><input type="text" name="totalbudget" required class="form-control" value="{{ res.amount }}"/></td>
+    </tr>
+
+    <tr>
+      <td>Choose File</td>
+      <td><input type="file" name="fileField" id="fileField" class="form-control" /></td>
+    </tr>
+
+      <tr>
+          <td>Description</td>
+          <td>
+              <textarea rows="5" cols="150" name="description" class="form-control">{{ res.description }}</textarea>
+          </td>
+      </tr>
+
+
+    <tr>
+      <td></td>
+      <td>  <input type="submit" name="button" id="button" value="UPLOAD" class="btn btn-success" /></td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "furnitureindex.html" %}
+{% block body %}
+<body>
+<h1 align="center">VIEW FURNITURE DETAILS</h1>
+<form id="form1" name="form1" method="post" action="/myapp/furniture_viewdetails_search/">
+Furniture name
+    <input type="text" name="fn" id="" />
+<input type="submit" name="button" id="button" value="SEARCH" />
+</form>
+<br>
+<table class="table table-bordered">
+  <tr>
+  <th>#</th>
+    <th>Furniture name</th>
+    <th>Category</th>
+    <th>Image</th>
+    <th>Wood type</th>
+    <th>Amount</th>
+      <th>Description</th>
+  <td><td>
+    {% for i in res %}
+    <tr>
+      <td width="50px">{{ forloop.counter }}</td>
+      <td>{{ i.furniturename }}</td>
+      <td>{{ i.category.catname }}</td>
+        <td><img src="{{ i.file }}" height="100" width="100"/></td>
+      <td>{{ i.wood_type }}</td>
+      <td>{{ i.Amount}}</td>
+        <td>{{ i.description }}</td>
+      <td width="50px"><a href="/myapp/furniture_viewdetails_edit/{{ i.pk }}" class="btn btn-success">Edit</a></td>
+      <td width="50px"><a href="/myapp/furniture_viewdetails_delete/{{ i.pk }}" class="btn btn-danger">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+
+</form>
+</body>
+{% endblock %}

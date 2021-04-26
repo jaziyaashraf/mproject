@@ -2,20 +2,19 @@
 {% block body %}
 
 <body>
-<h1 align="center">UPLOAD PREVIOUS WORK</h1>
-<form action="/myapp/architect_manage_workspost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<form action="/myapp/arc_edit_previous_workpost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
   <table class="table table-bordered">
     <tr>
       <td><strong>Work_title</strong></td>
-      <td><input type="text" name="textfield" id="textfield" class="form-control" required/></td>
+      <td><input type="text" name="textfield" id="textfield" required class="form-control" value="{{ res.worktitle }}"/></td>
     </tr>
     <tr>
       <td><strong>Work_details</strong></td>
-      <td><textarea name="textfield2" class="form-control" required></textarea> </td>
+      <td><textarea name="textfield2" class="form-control" required>{{ res.work_details }}</textarea> </td>
     </tr>
     <tr>
       <td><strong>File</strong></td>
-      <td><input type="file" name="fileField" id="fileField" required class="form-control"/></td>
+      <td><input type="file" name="fileField" id="fileField" class="form-control"/></td>
     </tr>
     <tr>
       <td colspan="2" ><div align="center">
