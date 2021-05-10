@@ -1,0 +1,88 @@
+package com.example.designerapp;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
+
+public class Cust_previouswork extends BaseAdapter {
+
+
+
+    String[] id,worktitle,work_details,file;
+
+    private Context context;
+
+    public Cust_previouswork(Context appcontext, String[] id,String[] worktitle,String[] work_details,String[] file)
+    {
+        this.context=appcontext;
+        this.id=id;
+        this.worktitle=worktitle;
+        this.work_details=work_details;
+        this.file=file;
+
+    }
+
+    @Override
+    public int getCount() {
+        return id.length;
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return 0;
+    }
+
+    @Override
+    public View getView(final int i, View view, ViewGroup viewGroup) {
+        LayoutInflater inflator=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        View gridView;
+        if(view==null)
+        {
+            gridView=new View(context);
+            //gridView=inflator.inflate(R.layout.customview, null);
+            gridView=inflator.inflate(R.layout.customprevwork,null);
+
+        }
+        else
+        {
+            gridView=(View)view;
+
+        }
+        TextView tvworktitle=(TextView)gridView.findViewById(R.id.textView24);
+        TextView tvworkdetails=(TextView)gridView.findViewById(R.id.textView25);
+        ImageView im=(ImageView) gridView.findViewById(R.id.imageView3);
+
+
+        tvworktitle.setText(worktitle[i]);
+        tvworkdetails.setText(work_details[i]);
+
+
+
+
+        SharedPreferences sh= PreferenceManager.getDefaultSharedPreferences(context);
+        String ip=sh.getString("ip","");
+
+        String url="http://" + ip + ":8000"+file[i];
+
+
+        Picasso.with(context).load(url). into(im);
+
+        return gridView;
+    }
+}
